@@ -14,7 +14,10 @@ fimg = { version = "0.4.37", optional = true, features = ["text"] }
 fmtastic = "0.2.0"
 fontdue = { version = "0.7.3", optional = true }
 hybridmap = "0.1.1"
-image = { version = "0.24.9", optional = true, default-features = false, features = ["png", "jpeg"] }
+image = { version = "0.24.9", optional = true, default-features = false, features = [
+    "png",
+    "jpeg",
+] }
 itertools = "0.12.1"
 lazy_static = { version = "1.4.0", optional = true }
 lock_api = "0.4.11"
@@ -26,8 +29,22 @@ gcd = { version = "2.3.0", optional = true }
 smallvec = "2.0.0-alpha.3"
 thiserror = "1.0.57"
 
-[dev-dependencies]
+[[example]]
+name = "parse-smiles"
+[example.dependencies]
 clap = { version = "4.5.1", features = ["derive"] }
+
+[[example]]
+name = "arena-test"
+[example.dependencies]
+clap = { version = "4.5.1", features = ["derive"] }
+
+[[example]]
+name = "web-server"
+[example.dependencies]
+clap = { version = "4.5.1", features = ["derive"] }
+axum = { version = "0.7.4", features = ["query"] }
+tokio = { version = "1.36.0", features = ["rt", "net"] }
 
 [features]
 default = ["mol-fmt", "rand"]
